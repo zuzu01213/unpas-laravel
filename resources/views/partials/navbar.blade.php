@@ -15,8 +15,7 @@
           <a class="nav-link" {{ ($title === "Posts" ) ? 'active' : ''}} href="/posts">My Blog</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" {{ ($title === "Posts" ) ? 'active' : ''}} href="http://coba-laravel-2.test/3?jumlahProduk=123&generateButton=#" target="_blank">My Project</a>
-
+          <a class="nav-link" {{ ($title === "Posts" ) ? 'active' : ''}} href="http://coba-laravel-2.test/3?jumlahProduk=10&generateButton=#" target="_blank">My Project</a>
         </li>
       </ul>
     </div>

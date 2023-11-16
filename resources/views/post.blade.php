@@ -10,7 +10,7 @@
     <style>
         body {
             background-color: whitesmoke;
-            
+            text-align: center
         }
     </style>
     <a href="/posts">Back to Posts</a>
