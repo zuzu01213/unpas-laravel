@@ -66,5 +66,8 @@
                 transform: translateY(0);
             }
         }
+        img:hover { 
+            cursor: pointer;
+        }
     </style>
 @endsection
