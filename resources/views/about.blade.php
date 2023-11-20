@@ -6,7 +6,7 @@
         <p>Class: {{ $class }}</p>
 
         <img src="images/pic-1.jpeg" height="500px" class="animated-img" id="pic1" alt="">
-        <img src="images/tengah.jpeg" height="500px" class="animated-img" id="pic2" alt="">
+        <img src="images/tengah.jpeg" height="500px" width="450px" class="animated-img" id="pic2" alt="">
         <img src="images/pic-2.jpeg" height="500px" class="animated-img" id="pic3" alt="">
     </div>
 
@@ -32,18 +32,30 @@
         }
 
         #pic1 {
-            animation: fadeInBottom 1s ease-in-out forwards;
+            animation: fadeInLeft 1s ease-in-out forwards;
         }
 
         #pic2 {
-            animation: fadeInTop 1s ease-in-out forwards;
+            animation: fadeInUp 1s ease-in-out forwards;
         }
 
         #pic3 {
-            animation: fadeInBottom 1s ease-in-out forwards;
+            animation: fadeInRight 1s ease-in-out forwards;
         }
 
-        @keyframes fadeInBottom {
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(20px);
@@ -55,17 +67,18 @@
             }
         }
 
-        @keyframes fadeInTop {
+        @keyframes fadeInRight {
             from {
                 opacity: 0;
-                transform: translateY(-20px);
+                transform: translateX(20px);
             }
 
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateX(0);
             }
         }
+
         img:hover { 
             cursor: pointer;
         }

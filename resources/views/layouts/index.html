@@ -7,11 +7,7 @@
 </head>
 <body>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt beatae ratione deleniti, facere sint ipsum explicabo magni voluptas quasi doloremque nisi dicta neque atque commodi ut molestias repellat iusto tenetur.</p><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto quam magni laudantium earum nulla quae possimus rem in, amet quas dolorem accusamus. Excepturi delectus, doloribus cumque itaque sequi reprehenderit ullam!</p>
-    Post::create([
-    'title' => 'Judul Kelima',
-    'excerpt' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto quam magni laudantium earum nulla quae possimus rem in, amet quas dolorem accusamus. Excepturi delectus, doloribus cumque itaque sequi reprehenderit ullam!',
-    'body' => '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt beatae ratione deleniti, facere sint ipsum explicabo magni voluptas quasi doloremque nisi dicta neque atque commodi ut molestias repellat iusto tenetur.</p><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto quam magni laudantium earum nulla quae possimus rem in, amet quas dolorem accusamus. Excepturi delectus, doloribus cumque itaque sequi reprehenderit ullam!</p>',
-    ])
+    Post::create(['title' => 'Judul Ketiga','slug' => 'judul-Ketiga','excerpt' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto quam magni laudantium earum nulla quae possimus rem in, amet quas dolorem accusamus. Excepturi delectus, doloribus cumque itaque sequi reprehenderit ullam!','body' => '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt beatae ratione deleniti, facere sint ipsum explicabo magni voluptas quasi doloremque nisi dicta neque atque commodi ut molestias repellat iusto tenetur.</p><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto quam magni laudantium earum nulla quae possimus rem in, amet quas dolorem accusamus. Excepturi delectus, doloribus cumque itaque sequi reprehenderit ullam!</p>',])
 </body>
 </html>
 Post::find(3)->update(['title' => 'Judul Ketiga Berubah'])
