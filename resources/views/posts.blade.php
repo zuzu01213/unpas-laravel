@@ -4,9 +4,8 @@
 
 @foreach ($posts as $post )
 <article class="mb-5">
-  <h2><a href="/posts/{{ $post["slug"] }}">{{ $post["title"]  }}</h2></a>
-  <h5>By: {{ $post["author"] }}</h5>
-  <p>{{ $post["body"] }}</p>
+  <h2><a href="/posts/{{ $post->id }}">{{ $post->title  }}</h2></a>
+  <p>{{ $post->excerpt }}</p>
 <style>
   body {
     background-color: whitesmoke;
