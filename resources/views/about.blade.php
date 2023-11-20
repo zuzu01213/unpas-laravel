@@ -13,6 +13,7 @@
     <style>
         body {
             background-color: blanchedalmond;
+            text-align: center
         }
 
         img {
@@ -22,9 +23,7 @@
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
-        h1 {
-            color: rgb(14, 14, 14);
-        }
+
 
         .animated-img {
             opacity: 0;
@@ -79,7 +78,7 @@
             }
         }
 
-        img:hover { 
+        img:hover {
             cursor: pointer;
         }
     </style>

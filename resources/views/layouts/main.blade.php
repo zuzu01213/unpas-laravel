@@ -13,5 +13,15 @@
       <div class="container mt-4">
         @yield('container')
       </div>
+      <style>
+        a {
+            color:  red;
+            text-decoration: none
+        }
+        a:hover {
+            color: white
+        }
+      </style>
+
 </body>
 </html>
