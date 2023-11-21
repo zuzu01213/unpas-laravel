@@ -5,8 +5,8 @@
       </div>
       <style>
         body{
-            background-color: blanchedalmond;
+            background-color: #FAF6F0;
+            text-align: center;
         }
       </style>
 @endsection
-      

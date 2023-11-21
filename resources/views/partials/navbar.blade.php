@@ -26,10 +26,10 @@
   <style>
 
     nav{
-        background-color: salmon;
+        background-color: black;
 
     }
-    li{
-        color: black !important;
+    .nav-link{
+        color: whitesmoke !important;
     }
   </style>

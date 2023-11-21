@@ -12,12 +12,12 @@
 
     <style>
         body {
-            background-color: blanchedalmond;
+            background-color: whitesmoke;
             text-align: center
         }
 
         img {
-            margin-left: 20px;
+            margin-left: 10px;
             border-radius: 50px;
             opacity: 0;
             transition: opacity 0.8s ease, transform 0.8s ease;
