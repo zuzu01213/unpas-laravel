@@ -36,5 +36,18 @@ class LoginController extends Controller
         //     'email' => 'The provided credentials do not match our records.',
         //     'passwordRepeat' => 'The provided credentials do not match our records.',
         // ]);
+
     }
+    public function logout(){
+
+        Auth::logout();
+
+
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
+
+        RETURN REDIRECT('/');
+
+    }
+
 }

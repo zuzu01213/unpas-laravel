@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <h1>{{ $post->title }}</h1>
-            <p class="text-secondary">By: <a href="/posts?author={{$post->author->username}}" class="author">{{$post->author->name}}</a> in <a href="/posts?categories={{ $post->category->slug }}">{{ $post->category->name }}</a></p>
+            <p class="text-secondary">By: <a href="/posts?author={{$post->author->username}}" class="author">{{$post->author->name}}</a> in <a href="/posts?category={{ $post->category->slug }}">{{ $post->category->name }}</a></p>
             <img src="https://source.unsplash.com/random/1200x400?sig=" class="img-fluid" alt="{{ $post->category->name }}">
                 {!! $post->body !!}
                 <a href="/posts" class="btn btn-primary">Back to Posts</a>

@@ -27,7 +27,7 @@
                 <h3 class="card-title"><a href="/posts/{{ $posts[0]->slug }}">{{ $posts[0]->title }}</a></h3>
                 <p>
                     <small class="text-body-secondary text-muted">
-                        By: <a href="/posts?author={{ $posts[0]->author->username }}" class="author">{{ $posts[0]->author->name }}</a> in <a href="/posts?categories={{ $posts[0]->category->slug }}">{{ $posts[0]->category->name }}</a> {{ $posts[0]->created_at->diffForHumans() }}
+                        By: <a href="/posts?author={{ $posts[0]->author->username }}" class="author">{{ $posts[0]->author->name }}</a> in <a href="/posts?category={{ $posts[0]->category->slug }}">{{ $posts[0]->category->name }}</a> {{ $posts[0]->created_at->diffForHumans() }}
                     </small>
                 </p>
                 <p class="card-text">{{ $posts[0]->excerpt }}</p>
@@ -40,9 +40,9 @@
                 @foreach ($posts->skip(1) as $post)
                 <div class="col-md-4 mb-4 fade-from-bottom">
                     <div class="card d-flex flex-column h-100">
-                        <form action="/posts" method="GET">
-                            <input type="hidden" name="categories" value="{{ $post->category->slug }}">
-                            <button type="submit" class="category-label">{{ $post->category->name }}</button>
+                        <form action="/posts" method="GET" id="categoryForm">
+                            <input type="hidden" name="category" value="{{ $post->category->slug }}">
+                            <button type="button" onclick="redirectToCategory('{{ $post->category->slug }}')" class="category-label">{{ $post->category->name }}</button>
                         </form>
                         <img src="https://source.unsplash.com/random/500x500?sig={{ $loop->index + 1 }}" class="card-img-bottom" alt="{{ $post->category->name }}">
                         <div class="card-body d-flex flex-column justify-content-between">
@@ -217,6 +217,9 @@
     document.addEventListener('DOMContentLoaded', function() {
         document.body.style.visibility = 'visible';
     });
+    function redirectToCategory(categorySlug) {
+        window.location.href = '/posts?category=' + categorySlug;
+    }
 </script>
 <div>
     {{$posts->links()}}

@@ -78,7 +78,7 @@
     justify-content: center;
     width: 50rem;
     height: 30rem;
-    border-radius: 3px; 
+    border-radius: 3px;
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.25);
   }
 

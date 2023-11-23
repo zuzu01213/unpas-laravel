@@ -21,65 +21,123 @@
                 <a class="nav-link" href="http://coba-laravel-2.test/3?jumlahProduk=10&generateButton=#" target="_blank">My Project</a>
             </li>
         </ul>
-        <ul class="navbar-nav ms-auto">
-            <li class="nav-item login-link {{ request()->is('login', 'register') ? 'active' : '' }}">
-                <a href="/login" class="nav-link"><i class="bi bi-box-arrow-in-right"></i> Login</a>
-            </li>
-
-        </ul>
+            <ul class="navbar-nav ms-auto">
+                @auth
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Welcome Back, {{auth()->user()->name}}
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-layout-text-sidebar-reverse"></i> My Dashboard</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <form action="/logout" method="POST">
+                                @csrf
+                                <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-right"></i> Logout</button>
+                            </form>
+                        </li>
+                    </ul>
+                  </li>
+                @else
+                <li class="nav-item login-link {{ request()->is('login', 'register') ? 'active' : '' }}">
+                    <a href="/login" class="nav-link"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+                </li>
+                @endauth
+            </ul>
     </div>
 </nav>
 
 <style>
-    body {
-        padding-top: 56px;
-        scroll-behavior: smooth;
-    }
+body {
+    padding-top: 56px;
+    scroll-behavior: smooth;
+}
 
-    nav {
-        background-color: black;
-        transition: background-color 0.3s ease;
-        opacity: 0.9;
-    }
+nav {
+    background-color: black;
+    transition: background-color 0.3s ease;
+}
 
-    .navbar-brand,
-    .navbar-nav .nav-link {
-        color: whitesmoke;
-        transition: color 0.3s ease;
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: whitesmoke;
+    transition: color 0.3s ease;
+}
 
-    }
+.navbar-toggler-icon {
+    background-color: whitesmoke;
+}
 
-    .navbar-toggler-icon {
-        background-color: whitesmoke;
-    }
+.navbar-toggler {
+    border: none;
+}
 
-    .navbar-toggler {
-        border: none;
-    }
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-item.login-link.active .nav-link {
+    font-weight: bold;
+    color: brown;
+}
 
-    .navbar-nav .nav-item.active .nav-link,
-    .navbar-nav .nav-item.login-link.active .nav-link {
-        font-weight: bold;
-        color: brown;
-    }
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-item.login-link .nav-link:hover {
+    color: lightcoral;
+}
 
-    .navbar-nav .nav-link:hover,
-    .navbar-nav .nav-item.login-link .nav-link:hover {
-        color: lightcoral;
-    }
+ul {
+    margin-left: 30px;
+    margin-right: 50px;
+}
 
-    ul {
-        margin-left: 30px;
-        margin-right: 50px;
-    }
+.navbar-brand {
+    margin-left: 30px;
+    margin-right: 0px;
+    font-size: 20px;
+    color: brown;
+}
 
-    .navbar-brand {
-        margin-left: 30px;
-        margin-right: 0px;
-        font-size: 20px;
-        color: brown;
-    }
-    h1 {
-        text-align: center;
-    }
+h1 {
+    text-align: center;
+}
+
+/* Navbar Dropdown Styles */
+.navbar-nav .nav-link.dropdown-toggle {
+    color: whitesmoke;
+}
+
+/* Change color when any dropdown item is active */
+.navbar-nav .nav-item.dropdown.show .nav-link.dropdown-toggle,
+.navbar-nav .nav-item.dropdown:hover .nav-link.dropdown-toggle {
+    color: brown;
+}
+
+/* Hover effect for dropdown toggle */
+.navbar-nav .nav-link.dropdown-toggle:hover {
+    color: lightcoral;
+}
+
+.dropdown-menu a {
+    color: black;
+}
+
+.dropdown-menu a:hover {
+    background-color: brown;
+    color: white;
+}
+
+/* Additional styles for smooth transitions */
+.dropdown-menu {
+    transition: opacity 0.3s ease;
+}
+
+.navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.navbar-nav .nav-item.dropdown .dropdown-menu {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
 </style>

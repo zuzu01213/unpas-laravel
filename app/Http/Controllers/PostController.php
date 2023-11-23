@@ -47,6 +47,6 @@ class CategoryController extends Controller
     {
         $categories = Category::paginate(7); // Adjust the number as needed
 
-        return view('categories', ['categories' => $categories]);
+        return view('categories.index', ['categories' => $categories]);
     }
 }
