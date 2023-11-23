@@ -1,5 +1,6 @@
 @extends('layouts.main')
 @section('container')
+
     <div class="container mt-4">
         <h1>My Biography</h1>
         <p class="mb-1">Name: {{ $nama }}</p>

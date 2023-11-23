@@ -29,13 +29,15 @@ class DatabaseSeeder extends Seeder
         //  ]);
         User::factory(3)->create();
 
-        $category = Category::find(1);
-        if ($category) {
-            $category->update([
-                'name' => 'Abstract',
-                'slug' => 'abstract',
-            ]);
-        }
+         Category::create([
+            'name' => 'Abstract',
+            'slug' => 'abstract',
+         ]);
+
+         Category::create([
+            'name' => 'Public',
+            'slug' => 'public',
+         ]);
 
          Category::create([
             'name' => 'Personal',
