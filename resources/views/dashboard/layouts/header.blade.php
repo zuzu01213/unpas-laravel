@@ -1,5 +1,5 @@
 <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="/home">K's Blog</a>
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="/about">K's Blog</a>
     <form action="/logout" method="POST">
       @csrf
       <button type="submit" class="nav-link px-3 bg-lg border-0"><i class="bi bi-box-arrow-right"></i> Logout</button>
