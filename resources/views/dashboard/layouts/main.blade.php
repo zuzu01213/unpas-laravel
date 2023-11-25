@@ -1,7 +1,9 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head><script src="../assets/js/color-modes.js"></script>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.ckeditor.com/ckeditor5/40.1.0/classic/ckeditor.js"></script>
     <meta charset="utf-8">
 
     <title>K's Blog | Dashboard</title>
@@ -18,12 +20,10 @@
 
       body {
             font-family: 'Playfair Display', serif;
-            background-color: white;
+            background-color: #FAF6F0;
 
         }
-        a.nav-link{
-            color: black
-        }
+
     </style>
 
 

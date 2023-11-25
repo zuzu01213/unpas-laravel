@@ -24,8 +24,6 @@
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
-
-
         .animated-img {
             opacity: 0;
             transition: opacity 0.8s ease, transform 0.8s ease;
@@ -83,4 +81,5 @@
             cursor: pointer;
         }
     </style>
+
 @endsection

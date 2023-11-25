@@ -66,7 +66,7 @@
         <a href="/posts" class="btn btn-primary">Back to Posts</a>
     @endif
 
-
+ 
         <style>
             body {
                 background-color: white;

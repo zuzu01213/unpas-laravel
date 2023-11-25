@@ -56,4 +56,11 @@
             color: black;
         }
     </style>
+        @if(request()->is('categories'))
+        <style>
+            .nav-kedua {
+                display: none;
+            }
+        </style>
+        @endif
 @endsection

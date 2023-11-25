@@ -9,7 +9,7 @@
                 <a class="nav-link" href="/home">Home</a>
             </li>
             <li class="nav-item {{ request()->is('about') ? 'active' : '' }}">
-                <a class="nav-link" href="/about">About Me</a>
+                <a class="nav-link" href="/about">About Creator</a>
             </li>
             <li class="nav-item {{ request()->is('posts') ? 'active' : '' }}">
                 <a class="nav-link" href="/posts">All Blog</a>
@@ -20,7 +20,9 @@
             <li class="nav-item {{ request()->is('my-project') ? 'active' : '' }}">
                 <a class="nav-link" href="http://coba-laravel-2.test/3?jumlahProduk=10&generateButton=#" target="_blank">My Project</a>
             </li>
+
         </ul>
+
             <ul class="navbar-nav ms-auto">
                 @auth
                 <li class="nav-item dropdown">
@@ -46,13 +48,41 @@
             </ul>
     </div>
 </nav>
-
+@if(request()->is('home', 'about', 'login', 'register'))
+    <style>
+        .nav-kedua {
+            display: none;
+        }
+    </style>
+@endif
+    <div class="nav-kedua" style="background-color: gray !important">
+    <nav class="nav nav-underline justify-content-between" >
+      <a class="nav-item nav-link link-body-emphasis active" href="#">World</a>
+      <a class="nav-item nav-link link-body-emphasis" href="#">U.S.</a>
+      <a class="nav-item nav-link link-body-emphasis" href="#">Technology</a>
+      <a class="nav-item nav-link link-body-emphasis" href="#">Design</a>
+      <a class="nav-item nav-link link-body-emphasis" href="#">Culture</a>
+      <a class="nav-item nav-link link-body-emphasis" href="#">Business</a>
+      <a class="nav-item nav-link link-body-emphasis" href="#">Politics</a>
+      <a class="nav-item nav-link link-body-emphasis" href="#">Opinion</a>
+      <a class="nav-item nav-link link-body-emphasis" href="#">Science</a>
+      <a class="nav-item nav-link link-body-emphasis" href="#">Health</a>
+      <a class="nav-item nav-link link-body-emphasis" href="#">Style</a>
+      <a class="nav-item nav-link link-body-emphasis" href="#">Travel</a>
+    </nav>
+</div>
 <style>
 body {
     padding-top: 56px;
     scroll-behavior: smooth;
 }
+.nav.nav-underline.justify-content-between a {
+    color: white !important; /* Change link text color to white */
+}
 
+.nav.nav-underline.justify-content-between a:hover {
+    color: lightcoral; /* Change link text color on hover to lightcoral or any color you prefer */
+}
 nav {
     background-color: black;
     transition: background-color 0.3s ease;
