@@ -16,27 +16,39 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        //  user::create ([
-        //     'name' => 'Keenan Rahmanda',
-        //     'email' => 'kener123@gmail.com',
-        //     'password' => bcrypt('12345')
-        //  ]);
+         user::create ([
+            'name' => 'Keenan Rahmanda',
+            'username' => 'Keenan123',
+            'email' => 'kener123@gmail.com',
+            'password' => bcrypt('12345')
+         ]);
 
         //  user::create ([
         //     'name' => 'Sandhika Galih',
         //     'email' => 'sandikagalih@gmail.com',
         //     'password' => bcrypt('12345')
         //  ]);
-        User::factory(3)->create();
+        User::factory(12)->create();
 
          Category::create([
-            'name' => 'Abstract',
-            'slug' => 'abstract',
+            'name' => 'World',
+            'slug' => 'world',
          ]);
 
          Category::create([
-            'name' => 'Public',
-            'slug' => 'public',
+            'name' => 'Indoneisa',
+            'slug' => 'indoneisa',
+         ]);
+
+         Category::create([
+            'name' => 'Culture',
+            'slug' => 'culture',
+         ]);
+
+
+         Category::create([
+            'name' => 'Fashion',
+            'slug' => 'fashion',
          ]);
 
          Category::create([
@@ -44,7 +56,42 @@ class DatabaseSeeder extends Seeder
             'slug' => 'personal',
          ]);
 
-            Post::factory(20)->create();
+         Category::create([
+            'name' => 'Business',
+            'slug' => 'business',
+         ]);
+
+         Category::create([
+            'name' => 'Politics',
+            'slug' => 'politics',
+         ]);
+
+         Category::create([
+            'name' => 'Science',
+            'slug' => 'science',
+         ]);
+
+         Category::create([
+            'name' => 'Health',
+            'slug' => 'health',
+         ]);
+
+         Category::create([
+            'name' => 'Lifestyle',
+            'slug' => 'lifestyle',
+         ]);
+
+         Category::create([
+            'name' => 'Travel',
+            'slug' => 'travel',
+         ]);
+         Category::create([
+            'name' => 'Food',
+            'slug' => 'food',
+         ]);
+
+
+            Post::factory(66)->create();
 
         //  Post::create([
         //     'title' => 'Judul Pertama',

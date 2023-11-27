@@ -4,15 +4,21 @@
     <h1 class="h2">All your posts, {{ auth()->user()->name }}</h1>
 </div>
 
-<div class="table-responsive small col-lg-8 ">
+@if (session()->has('success'))
+<div class="alert alert-dark" role="alert">
+    {{session('success')}}
+</div>
+@endif
+
+<div class="table-responsive small col-lg-12  ">
     <a href="/dashboard/posts/create" class="btn btn-dark mb-3">Create new post</a>
-        <table class="table custom-table-style">
+    <table class="table custom-table-style">
         <thead>
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Title</th>
                 <th scope="col">Category</th>
-                <th scope="col">Action</th>
+                <th scope="col" style="padding-left: 88px;">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -20,18 +26,22 @@
             <tr>
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $post->title }}</td>
-                <td>{{ $post->category->name }}</td>
-                <td>
-                    <a href="/dashboard/posts/{{$post->slug}}" style="color: brown; margin-right: 10px; padding: 5px; border-radius: 5px;">
-                        <i class="bi bi-eye" style="font-size: 1.5em;"></i>
+                <td>{{ optional($post->category)->name ?: 'Uncategorized' }}</td>
+                <td class="between">
+                    <a href="/dashboard/posts/{{ $post->slug }}" class="action-link">
+                        <i class="bi bi-eye"></i> View
                     </a>
-                    <a href="/dashboard/posts/{{$post->slug}}" style="color: brown; margin-right: 10px; padding: 5px; border-radius: 5px;">
-                        <i class="bi bi-pencil-square" style="font-size: 1.5em;"></i>
+                    <a href="/dashboard/posts/{{ $post->slug }}/edit" class="action-link" style="background-color: #2C3E50;">
+                        <i class="bi bi-pencil-square"></i> Edit
                     </a>
-                    <a href="/dashboard/posts/{{$post->slug}}" style="color: brown; margin-right: 10px; padding: 5px; border-radius: 5px; ">
-                        <i class="bi bi-x-circle" style="font-size: 1.5em;"></i>
-                    </a>
-                </td>
+                    <form action="/dashboard/posts/{{ $post->slug }}" method="POST" style="display: inline;">
+                        @method('delete')
+                        @csrf
+                        <button type="submit" class="action-btn" onclick="return confirm('Are you sure')">
+                            <i class="bi bi-x-circle"></i> Delete
+                        </button>
+                    </form>
+                </td>                
             </tr>
             @endforeach
         </tbody>
@@ -40,6 +50,33 @@
 @endsection
 <style>
     .custom-table-style {
-    background-color: #000000;
-}
+        background-color: #000000;
+    }
+ 
+    .action-link {
+        color: white;
+        margin-right: 10px;
+        padding: 5px;
+        border-radius: 5px;
+        text-decoration: none;
+        background-color: #116D6E;
+    }
+
+    .action-link:hover {
+        opacity: 0.7;
+    }
+
+    .action-btn {
+        color: #FAF6F0;
+        border-radius: 5px;
+        background-color: #CD1818;
+        margin-right: 10px;
+        padding: 5px;
+        cursor: pointer;
+        border: none;
+    }
+
+    .action-btn:hover {
+        background-color: #E74C3C; /* Adjust as needed */
+    }
 </style>

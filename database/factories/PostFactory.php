@@ -21,11 +21,11 @@ class PostFactory extends Factory
             'slug' => $this->faker->slug(),
             'excerpt' => $this->faker->paragraph(),
             // 'body' => '<p>' . inplode('</p><p>', $this->faker->paragraphs(mt_rand(5, 10))) . '</p>',
-            'body' => collect($this->faker->paragraphs(mt_rand(5, 10)))
+            'body' => collect($this->faker->paragraphs(mt_rand(15, 25)))
                         ->map(fn($p) => "<p>$p</p>")
                         ->implode(''),
             'user_id' => mt_rand(1,3),
-            'category_id' => mt_rand(1,2),
+            'category_id' => mt_rand(1,13),
         ];
     }
 }

@@ -1,30 +1,33 @@
 @extends('layouts.main')
 @section('container')
+<body>
+    <main>
 
-    <div class="container mt-4">
-        <h1>My Biography</h1>
-        <p class="mb-1">Name: {{ $nama }}</p>
-        <p>Class: {{ $class }}</p>
+        <div class="container mt-4">
+            <h1>My Biography</h1>
+            <p class="mb-1">Name: {{ $nama }}</p>
+            <p>Class: {{ $class }}</p>
 
-        <img src="images/pic-1.jpeg" height="500px" class="animated-img" id="pic1" alt="">
-        <img src="images/tengah.jpeg" height="500px" width="450px" class="animated-img" id="pic2" alt="">
-        <img src="images/pic-2.jpeg" height="500px" class="animated-img" id="pic3" alt="">
-    </div>
+            <img src="images/pic-1.jpeg" height="500px" class="animated-img" id="pic1" alt="">
+            <img src="images/tengah.jpeg" height="500px" width="450px" class="animated-img" id="pic2" alt="">
+            <img src="images/pic-2.jpeg" height="500px" class="animated-img" id="pic3" alt="">
+        </div>
+    </main>
+</body>
 
     <style>
         body {
-            background-color: whitesmoke;
-            text-align: center
-        }
-
-        img {
-            margin-left: 10px;
-            border-radius: 50px;
-            opacity: 0;
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            background-color: #FAF6F0 ;
+            text-align: center;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            position: relative;
         }
 
         .animated-img {
+            margin-left: 10px;
+            border-radius: 50px;
             opacity: 0;
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
@@ -81,5 +84,13 @@
             cursor: pointer;
         }
     </style>
+
+    @if(request()->is('about'))
+        <style>
+            .nav-kedua {
+                display: none;
+            }
+        </style>
+    @endif
 
 @endsection

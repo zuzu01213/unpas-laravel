@@ -22,12 +22,28 @@
 
     @if ($posts->count())
         <div class="card mb-3 fade-from-bottom">
-            <img src="https://source.unsplash.com/random/1200x400?sig=" class="card-img-top" alt="...">
+            @if ($posts[0]->image)
+            <div style="max-height: 350px; overflow: hidden;">
+                <img src="{{ asset('storage/'. $posts[0]->image) }}" class="img-fluid" style="object-fit: cover; width: 100%; height: 100%; " alt="{{ $posts[0]->category->name }}">
+            </div>
+            @else
+                <img src="https://source.unsplash.com/random/1200x400?sig=" class="img-fluid" style="object-fit: cover; width: 100%; height: 100%;" alt="{{ $posts[0]->category->name }}">
+            @endif
             <div class="card-body">
-                <h3 class="card-title"><a href="/posts/{{ $posts[0]->slug }}">{{ $posts[0]->title }}</a></h3>
+                <h3 class="card-title">
+                    <a href="/posts/{{ $posts[0]->slug }}">{{ $posts[0]->title }}</a>
+                </h3>
                 <p>
                     <small class="text-body-secondary text-muted">
-                        By: <a href="/posts?author={{ $posts[0]->author->username }}" class="author">{{ $posts[0]->author->name }}</a> in <a href="/posts?category={{ $posts[0]->category->slug }}">{{ $posts[0]->category->name }}</a> {{ $posts[0]->created_at->diffForHumans() }}
+                        By:
+                        @if ($posts[0]->author)
+                            <a href="/posts?author={{ $posts[0]->author->username }}" class="author">{{ $posts[0]->author->name }}</a>
+                        @endif
+                        in
+                        @if ($posts[0]->category)
+                            <a href="/posts?category={{ $posts[0]->category->slug }}">{{ $posts[0]->category->name }}</a>
+                        @endif
+                        {{ $posts[0]->created_at->diffForHumans() }}
                     </small>
                 </p>
                 <p class="card-text">{{ $posts[0]->excerpt }}</p>
@@ -38,35 +54,54 @@
         <div class="container">
             <div class="row">
                 @foreach ($posts->skip(1) as $post)
-                <div class="col-md-4 mb-4 fade-from-bottom">
-                    <div class="card d-flex flex-column h-100">
-                        <form action="/posts" method="GET" id="categoryForm">
-                            <input type="hidden" name="category" value="{{ $post->category->slug }}">
-                            <button type="button" onclick="redirectToCategory('{{ $post->category->slug }}')" class="category-label">{{ $post->category->name }}</button>
-                        </form>
-                        <img src="https://source.unsplash.com/random/500x500?sig={{ $loop->index + 1 }}" class="card-img-bottom" alt="{{ $post->category->name }}">
-                        <div class="card-body d-flex flex-column justify-content-between">
-                            <a href="/posts/{{ $post->slug }}"><h5 class="card-title">{{ $post->title }}</h5></a>
-                            <p>
-                                <small class="text-body-secondary">
-                                    By: <a href="/posts?author={{ $post->author->username }}" class="author">{{ $post->author->name }}</a> {{ $post->created_at->diffForHumans() }}
-                                </small>
-                            </p>
-                            <p class="card-text">{{ $post->excerpt }}</p>
-                            <a href="/posts/{{ $post->slug }}" class="btn btn-primary mx-auto">Read More</a> {{--mx full--}}
+                    <div class="col-md-4 mb-4 fade-from-bottom">
+                        <div class="card d-flex flex-column h-100">
+                            <form action="/posts" method="GET" id="categoryForm">
+                                @if ($post->category)
+                                    <input type="hidden" name="category" value="{{ $post->category->slug }}">
+                                    <button type="button" onclick="redirectToCategory('{{ $post->category->slug }}')" class="category-label">{{ $post->category->name }}</button>
+                                @else
+                                    <span class="category-label">Uncategorized</span>
+                                @endif
+                            </form>
+                            @if ($post->image)
+
+                            <img src="{{ asset('storage/'. $post->image) }}" class="img-fluid" style="object-fit: cover; width: 100%; height: 56%; " alt="{{ $posts[0]->category->name }}">
+                            @else
+                            <img src="https://source.unsplash.com/random/500x500?sig={{ $loop->index + 1 }}" class="card-img-bottom" alt="{{ optional($post->category)->name }}">
+                            @endif
+
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <a href="/posts/{{ $post->slug }}"><h5 class="card-title">{{ $post->title }}</h5></a>
+                                <p>
+                                    <small class="text-body-secondary">
+                                        By:
+                                        @if ($post->author)
+                                            <a href="/posts?author={{ $post->author->username }}" class="author">{{ $post->author->name }}</a>
+                                        @endif
+                                        {{ $post->created_at->diffForHumans() }}
+                                    </small>
+                                </p>
+                                <p class="card-text">{{ $post->excerpt }}</p>
+                                <a href="/posts/{{ $post->slug }}" class="btn btn-primary mx-auto">Read More</a>
+                            </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>
-
     @else
         <p class="text-center fs-4">No Post Found.</p>
         <a href="/posts" class="btn btn-primary">Back to Posts</a>
     @endif
 
- 
+    <div>
+        {{ $posts->links() }}
+    </div>
+
+
+
+
         <style>
             body {
                 background-color: white;
@@ -221,7 +256,5 @@
         window.location.href = '/posts?category=' + categorySlug;
     }
 </script>
-<div>
-    {{$posts->links()}}
-</div>
+
 @endsection

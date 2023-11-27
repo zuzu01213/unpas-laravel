@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-    <a class="navbar-brand" href="#">K's</a>
+    <a class="navbar-brand" href="/home">K's</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -48,126 +48,149 @@
             </ul>
     </div>
 </nav>
-@if(request()->is('home', 'about', 'login', 'register'))
+@if(request()->is('home', 'about', 'login', 'register', 'categories'))
     <style>
         .nav-kedua {
             display: none;
         }
     </style>
+
 @endif
-    <div class="nav-kedua" style="background-color: gray !important">
-    <nav class="nav nav-underline justify-content-between" >
-      <a class="nav-item nav-link link-body-emphasis active" href="#">World</a>
-      <a class="nav-item nav-link link-body-emphasis" href="#">U.S.</a>
-      <a class="nav-item nav-link link-body-emphasis" href="#">Technology</a>
-      <a class="nav-item nav-link link-body-emphasis" href="#">Design</a>
-      <a class="nav-item nav-link link-body-emphasis" href="#">Culture</a>
-      <a class="nav-item nav-link link-body-emphasis" href="#">Business</a>
-      <a class="nav-item nav-link link-body-emphasis" href="#">Politics</a>
-      <a class="nav-item nav-link link-body-emphasis" href="#">Opinion</a>
-      <a class="nav-item nav-link link-body-emphasis" href="#">Science</a>
-      <a class="nav-item nav-link link-body-emphasis" href="#">Health</a>
-      <a class="nav-item nav-link link-body-emphasis" href="#">Style</a>
-      <a class="nav-item nav-link link-body-emphasis" href="#">Travel</a>
+<div class="nav-kedua">
+    <nav class="nav nav-underline justify-content-around">
+        @foreach($categories as $category)
+            <a class="nav-item nav-link {{ request('category') === $category->slug ? 'link-body-emphasis active' : 'link-body-emphasis' }}" href="/posts?category={{ $category->slug }}">
+                {{ $category->name }}
+            </a>
+        @endforeach
     </nav>
 </div>
+
+
 <style>
-body {
-    padding-top: 56px;
-    scroll-behavior: smooth;
-}
-.nav.nav-underline.justify-content-between a {
-    color: white !important; /* Change link text color to white */
-}
+    body {
+        padding-top: 56px;
+        scroll-behavior: smooth;
+    }
 
-.nav.nav-underline.justify-content-between a:hover {
-    color: lightcoral; /* Change link text color on hover to lightcoral or any color you prefer */
-}
-nav {
-    background-color: black;
-    transition: background-color 0.3s ease;
-}
+    nav {
+        background-color: black;
+        transition: background-color 0.3s ease;
+    }
 
-.navbar-brand,
-.navbar-nav .nav-link {
-    color: whitesmoke;
-    transition: color 0.3s ease;
-}
+    .navbar-brand,
+    .navbar-nav .nav-link {
+        color: whitesmoke;
+        transition: color 0.3s ease;
+    }
 
-.navbar-toggler-icon {
-    background-color: whitesmoke;
-}
+    .navbar-toggler-icon {
+        background-color: whitesmoke;
+    }
 
-.navbar-toggler {
-    border: none;
-}
+    .navbar-toggler {
+        border: none;
+    }
 
-.navbar-nav .nav-item.active .nav-link,
-.navbar-nav .nav-item.login-link.active .nav-link {
-    font-weight: bold;
-    color: brown;
-}
+    .navbar-nav .nav-item.active .nav-link,
+    .navbar-nav .nav-item.login-link.active .nav-link {
+        font-weight: bold;
+        color: brown;
+    }
 
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-item.login-link .nav-link:hover {
-    color: lightcoral;
-}
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-item.login-link .nav-link:hover {
+        color: lightcoral;
+    }
 
-ul {
-    margin-left: 30px;
-    margin-right: 50px;
-}
+    ul {
+        margin-left: 30px;
+        margin-right: 50px;
+    }
 
-.navbar-brand {
-    margin-left: 30px;
-    margin-right: 0px;
-    font-size: 20px;
-    color: brown;
-}
+    .navbar-brand {
+        margin-left: 30px;
+        margin-right: 0px;
+        font-size: 20px;
+        color: brown;
+    }
 
-h1 {
-    text-align: center;
-}
+    h1 {
+        text-align: center;
+    }
 
-/* Navbar Dropdown Styles */
-.navbar-nav .nav-link.dropdown-toggle {
-    color: whitesmoke;
-}
+    /* Navbar Dropdown Styles */
+    .navbar-nav .nav-link.dropdown-toggle {
+        color: whitesmoke;
+    }
 
-/* Change color when any dropdown item is active */
-.navbar-nav .nav-item.dropdown.show .nav-link.dropdown-toggle,
-.navbar-nav .nav-item.dropdown:hover .nav-link.dropdown-toggle {
-    color: brown;
-}
+    /* Change color when any dropdown item is active */
+    .navbar-nav .nav-item.dropdown.show .nav-link.dropdown-toggle,
+    .navbar-nav .nav-item.dropdown:hover .nav-link.dropdown-toggle {
+        color: brown;
+    }
 
-/* Hover effect for dropdown toggle */
-.navbar-nav .nav-link.dropdown-toggle:hover {
-    color: lightcoral;
-}
+    /* Hover effect for dropdown toggle */
+    .navbar-nav .nav-link.dropdown-toggle:hover {
+        color: lightcoral;
+    }
 
-.dropdown-menu a {
-    color: black;
-}
+    .dropdown-menu a {
+        color: black;
+    }
 
-.dropdown-menu a:hover {
-    background-color: brown;
-    color: white;
-}
+    .dropdown-menu a:hover {
+        background-color: brown;
+        color: white;
+    }
 
-/* Additional styles for smooth transitions */
-.dropdown-menu {
-    transition: opacity 0.3s ease;
-}
+    /* Additional styles for smooth transitions */
+    .dropdown-menu {
+        transition: opacity 0.3s ease;
+    }
 
-.navbar-nav .nav-item.dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-}
+    .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+    }
 
-.navbar-nav .nav-item.dropdown .dropdown-menu {
-    opacity: 0;
-    visibility: hidden;
-}
+    .navbar-nav .nav-item.dropdown .dropdown-menu {
+        opacity: 0;
+        visibility: hidden;
+    }
 
+    .nav.nav-underline.justify-content-around a {
+        color: white !important; /* Change link text color to white */
+    }
 
+    .nav.nav-underline.justify-content-around a.link-body-emphasis.active {
+        color: brown !important; /* Change link text color to brown for active links */
+    }
+
+    .nav.nav-underline.justify-content-around a:hover {
+        color: lightcoral; /* Change link text color on hover to lightcoral or any color you prefer */
+    }
 </style>
+
+@if(request()->is( 'home' ))
+    <style>
+        nav {
+            background-color: transparent;
+            position: absolute;
+            z-index: 9999;
+            width: 100%;
+            top: 0;
+            left: 0;
+
+        }
+        .navbar-brand,
+    .navbar-nav .nav-link {
+        color: black;
+        transition: color 0.3s ease;
+    }
+    .navbar-nav .nav-link.dropdown-toggle {
+        color: black;
+    }
+    </style>
+
+@endif

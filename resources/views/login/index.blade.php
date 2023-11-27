@@ -17,7 +17,7 @@
     </div>
     @endif
 </div>
-<body class="img js-fullheight" style="background-image: url(https://wallpaperaccess.com/full/4919416.png);">
+<body class="img js-fullheight" style="background-image: url(https://images6.alphacoders.com/719/719312.jpg);">
   <div class="signup__container">
     <div class="container__child signup__thumbnail">
       <div class="thumbnail__logo">
