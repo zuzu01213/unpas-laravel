@@ -18,8 +18,11 @@ class DashboardPostController extends Controller
     {
 
         return view('dashboard.posts.index', [
-            'posts' => Post::where('user_id', auth()->user()->id)->get()
+            'posts' => Post::where('user_id', auth()->user()->id)->get(),
+            'categories' => Category::all(),
+
         ]);
+
     }
 
     /**
@@ -30,6 +33,7 @@ class DashboardPostController extends Controller
         return view('dashboard.posts.create', [
             'categories' => Category::all(),
         ]);
+
     }
 
     /**
@@ -58,7 +62,7 @@ class DashboardPostController extends Controller
 
 
         Post::create($validateData);
-
+        logger('Post created successfully');
         return redirect('/dashboard/posts')->with('success', 'New post successfully added');
 
     }

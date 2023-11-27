@@ -6,6 +6,9 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\View;
 use App\Models\Category;
+use App\Models\User;
+use Illuminate\Support\Facades\Gate;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,10 +27,12 @@ class AppServiceProvider extends ServiceProvider
     {
         Paginator::useBootstrap();
 
-        // Fetch all categories
+        Gate::define('admin', function(User $user){
+            return $user->is_admin;
+        });
+
         $categories = Category::all();
 
-        // Share categories with specific views
         View::composer(['layouts.main', 'posts', 'categories.index'], function ($view) use ($categories) {
             $view->with('categories', $categories);
         });

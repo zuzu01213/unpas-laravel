@@ -185,11 +185,14 @@
         }
         .navbar-brand,
     .navbar-nav .nav-link {
-        color: black;
+        color: WHITE;
         transition: color 0.3s ease;
+        position: relative;
+        z-index: 123142142142132112321;
+
     }
     .navbar-nav .nav-link.dropdown-toggle {
-        color: black;
+        color: WHITE;
     }
     </style>
 
