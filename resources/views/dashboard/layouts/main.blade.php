@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
+    <!-- Sertakan skrip CKEditor setelah jQuery -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/44.0.3/classic/ckeditor.js"></script>   
     <script src="https://cdn.ckeditor.com/ckeditor5/40.1.0/classic/ckeditor.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">

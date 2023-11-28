@@ -65,18 +65,15 @@
     const categorySelect = document.querySelector("#category");
     const bodyInput = document.querySelector("#body");
 
-    // Function to generate slug from title
     function generateSlug(title) {
         return title.replace(/ /g, "-").toLowerCase();
     }
 
-    // Function to update slug field
     function updateSlug() {
         const titleValue = titleInput.value;
         slugInput.value = generateSlug(titleValue);
     }
 
-    // Function to update body field
     function updateBody(editor) {
         editor.model.document.on('change:data', () => {
             bodyInput.value = editor.getData();

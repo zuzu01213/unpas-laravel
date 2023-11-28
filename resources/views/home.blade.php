@@ -2,35 +2,38 @@
 @section('container')
 <body>
     <main>
-        <div class="vignette"></div>
-        <img src="images/background.png" class="parallax bg-img" data-speedx="0.3" data-speedy="0.38" data-speedz="0" data-rotation="0">
-        <img src="images/fog_7.png" class="parallax fog-7" data-speedx="0.2" data-speedy="0.32" data-speedz="0"data-rotation="0">
-        <img src="images/mountain_10.png" class="parallax mountain-10" data-speedx="0.2" data-speedy="0.305" data-speedz="0"data-rotation="0">
-        <img src="images/fog_6.png" class="parallax fog-6" data-speedx="0.2" data-speedy="0.28" data-speedz="0"data-rotation="0">
-        <img src="images/mountain_9.png" class="parallax mountain-9" data-speedx="0.125" data-speedy="0.155" data-speedz="0.15"data-rotation="0.02">
-        <img src="images/mountain_8.png" class="parallax mountain-8" data-speedx="0.1" data-speedy="0.11" data-speedz="0"data-rotation="0.02">
-        <img src="images/fog_5.png" class="parallax fog-5" data-speedx="0.16" data-speedy="0.105" data-speedz="0" data-rotation="0">
-        <img src="images/mountain_7.png" class="parallax mountain-7" data-speedx="0.1" data-speedy="0.1" data-speedz="0" data-rotation="0.09">
-        <div class="text" data-speedx="0.07" data-speedy="0.07" data-speedz="0" data-rotation="0.11">
+        <div class="vignette hide"></div>
+        <img src="images/background.png" class="parallax bg-img" data-speedx="0.3" data-speedy="0.38" data-speedz="0" data-rotation="0" data-distance="-200">
+        <img src="images/fog_7.png" class="parallax fog-7" data-speedx="0.2" data-speedy="0.32" data-speedz="0"data-rotation="0" data-distance="850">
+        <img src="images/mountain_10.png" class="parallax mountain-10" data-speedx="0.2" data-speedy="0.305" data-speedz="0"data-rotation="0" data-distance="1100">
+        <img src="images/fog_6.png" class="parallax fog-6" data-speedx="0.2" data-speedy="0.28" data-speedz="0"data-rotation="0" data-distance="1400">
+        <img src="images/mountain_9.png" class="parallax mountain-9" data-speedx="0.125" data-speedy="0.155" data-speedz="0.15"data-rotation="0.02" data-distance="1700">
+        <img src="images/mountain_8.png" class="parallax mountain-8" data-speedx="0.1" data-speedy="0.11" data-speedz="0"data-rotation="0.02" data-distance="1800">
+        <img src="images/fog_5.png" class="parallax fog-5" data-speedx="0.16" data-speedy="0.105" data-speedz="0" data-rotation="0" data-distance="1900">
+        <img src="images/mountain_7.png" class="parallax mountain-7" data-speedx="0.1" data-speedy="0.1" data-speedz="0" data-rotation="0.09" data-distance="2000">
+        <div class="text" data-speedx="0.07" data-speedy="0.07" data-speedz="0" data-rotation="0.11" data-distance="0">
             <h2>K's</h2>
             <h1>Indonesia</h1>
         </div>
-        <img src="images/mountain_6.png" class="parallax mountain-6" data-speedx="0.065"data-speedy="0.055" data-speedz="0.05" data-rotation="0.12">
-        <img src="images/fog_4.png" class="parallax fog-4" data-speedx="0.135"data-speedy="0.0136" data-speedz="0" data-rotation="0">
-        <img src="images/mountain_5.png" class="parallax mountain-5" data-speedx="0.08" data-speedy="0.08" data-speedz="0.13" data-rotation="0.1">
-        <img src="images/fog_3.png" class="parallax fog-3" data-speedx="0.11" data-speedy="0.018" data-speedz="0" data-rotation="0">
-        <img src="images/mountain_4.png" class="parallax mountain-4" data-speedx="0.059" data-speedy="0.024" data-speedz="0.35" data-rotation="0">
-        <img src="images/mountain_3.png" class="parallax mountain-3" data-speedx="0.04" data-speedy="0.018" data-speedz="0.32" data-rotation="0">
-        <img src="images/fog_2.png" class="parallax fog-2" data-speedx="0.15" data-speedy="0.0115" data-speedz="0" data-rotation="0">
-        <img src="images/mountain_2.png" class="parallax mountain-2" data-speedx="0.0235" data-speedy="0.013" data-speedz="0.42" data-rotation="0.15">
-        <img src="images/mountain_1.png" class="parallax mountain-1" data-speedx="0.027" data-speedy="0.018" data-speedz="0.53" data-rotation="0.2">
-        <img src="images/sun_rays.png" class="parallax sun-rays" >
-        <img src="images/black_shadow.png" class="parallax black-shadows" >
-        <img src="images/fog_1.png" class="parallax fog-1" data-speedx="0.12" data-speedy="0.01" data-speedz="0">
+        <img src="images/mountain_6.png" class="parallax mountain-6" data-speedx="0.065"data-speedy="0.055" data-speedz="0.05" data-rotation="0.12" data-distance="2300">
+        <img src="images/fog_4.png" class="parallax fog-4" data-speedx="0.135"data-speedy="0.0136" data-speedz="0" data-rotation="0" data-distance="2400">
+        <img src="images/mountain_5.png" class="parallax mountain-5" data-speedx="0.08" data-speedy="0.08" data-speedz="0.13" data-rotation="0.1" data-distance="2550">
+        <img src="images/fog_3.png" class="parallax fog-3" data-speedx="0.11" data-speedy="0.018" data-speedz="0" data-rotation="0" data-distance="2800">
+        <img src="images/mountain_4.png" class="parallax mountain-4" data-speedx="0.059" data-speedy="0.024" data-speedz="0.35" data-rotation="0" data-distance="3200">
+        <img src="images/mountain_3.png" class="parallax mountain-3" data-speedx="0.04" data-speedy="0.018" data-speedz="0.32" data-rotation="0" data-distance="3400">
+        <img src="images/fog_2.png" class="parallax fog-2" data-speedx="0.15" data-speedy="0.0115" data-speedz="0" data-rotation="0" data-distance="3600">
+        <img src="images/mountain_2.png" class="parallax mountain-2" data-speedx="0.0235" data-speedy="0.013" data-speedz="0.42" data-rotation="0.15" data-distance="3800">
+        <img src="images/mountain_1.png" class="parallax mountain-1" data-speedx="0.027" data-speedy="0.018" data-speedz="0.53" data-rotation="0.2" data-distance="4000">
+        <img src="images/sun_rays.png" class="parallax sun-rays hide" >
+        <img src="images/black_shadow.png" class="parallax black-shadows hide" >
+        <img src="images/fog_1.png" class="parallax fog-1" data-speedx="0.12" data-speedy="0.01" data-speedz="0" data-distance="4200">
     </main>
 </body>
 
 <style>
+    *,*::before,*::after {
+        padding: 0; margin: 0; box-sizing: border-box;
+    }
     body {
         background-color: #353;
         text-align: center;
@@ -81,7 +84,7 @@
     .mountain-10 {
         position: absolute;
         width: 870px;
-        z-index: 4;
+        z-index: 11;
         top: calc(50% + 39px);
         left: calc(50% + 160px);
         transform: translate(-50%, -50%);
@@ -99,7 +102,7 @@
     .mountain-9 {
         position: absolute;
         width: 470px;
-        z-index: 5;
+        z-index: 14;
         top: calc(50% + 119px);
         left: calc(50% - 457px);
         transform: translate(-50%, -50%);
@@ -108,7 +111,7 @@
     .mountain-8 {
         position: absolute;
         width: 786px;
-        z-index: 11;
+        z-index: 14;
         top: calc(50% + 96px);
         left: calc(50% - 202px);
         transform: translate(-50%, -50%);
@@ -134,16 +137,16 @@
     .mountain-7 {
         position: absolute;
         width: 515px;
-        z-index: 8;
+        z-index: 11;
         top: calc(50% + 24px);
         left: calc(50% + 305px);
         transform: translate(-50%, -50%);
     }
 
     .text {
-        z-index: 12;
+        z-index: 15;
         position: absolute;
-        top: calc(50% - 130px);
+        top: calc(55% - 130px);
         left: 50%;
         transform: translate(-50%, -50%);
         text-transform: uppercase;
@@ -242,7 +245,7 @@
         width: 450px;
         z-index: 18;
         top: calc(50% + 58.5px);
-        left: calc(50% - 645px);
+        left: calc(50% - 665px);
         transform: translate(-50%, -50%);
     }
     .sun-rays {
@@ -263,56 +266,82 @@
         right: 0;
         width: 100%;
     }
+
+    @media(max-width: 1100px){
+        .text h1 {
+            font-size: 5.8rem;
+        }
+        .text h2 {
+            font-size: 4.7rem;
+        }
+    }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script>
-   const parallax_el = document.querySelectorAll('.parallax');
+    const parallax_el = document.querySelectorAll('.parallax');
     let xValue = 0;
     let yValue = 0;
-    let rorateDegree = 0;
+    let rotateDegree = 0;
 
+    function update(cursorPosition) {
+        parallax_el.forEach((el) => {
+            let speedX = el.dataset.speedx;
+            let speedY = el.dataset.speedy;
+            let speedZ = el.dataset.speedz;
+            let rotateSpeed = el.dataset.rotation;
 
+            let isInLeft = parseFloat(getComputedStyle(el).left) < window.innerWidth / 2 ? 1 : -1;
+            let zValue = (cursorPosition - parseFloat(getComputedStyle(el).left)) * isInLeft * 0.1;
 
-function update(cursorPosition) {
-    parallax_el.forEach((el) => {
-    let speedx = el.dataset.speedx;
-    let speedy = el.dataset.speedy;
-    let speedz = el.dataset.speedz;
-    let rotateSpeed = el.dataset.rotation;
-
-    let isInLeft = parseFloat(getComputedStyle(el).left) < window.innerWidth / 2 ? 1 : -1;
-    let zValue = (cursorPosition - parseFloat(getComputedStyle(el).left)) * isInLeft * 0.1;
-
-    el.style.transform = `perspective(2300px) translateZ(${zValue * speedz}px)
-    rotateY(${rorateDegree * rotateSpeed}deg) translateX(calc(-50% + ${xValue * speedx}px))
-    translateY(calc(-50% + ${yValue * speedy}px))`;
-    });
-}
+            el.style.transform = `perspective(2300px) translateZ(${zValue * speedZ}px)
+            rotateY(${rotateDegree * rotateSpeed}deg) translateX(calc(-50% + ${-xValue * speedX}px))
+            translateY(calc(-50% + ${yValue * speedY}px))`;
+        });
+    }
 
     update(0);
 
-    window.addEventListener("mousemove", (e)=> {
+    window.addEventListener("mousemove", (e) => {
+        if(timeline.isActive()) return;
 
         xValue = e.clientX - window.innerWidth / 2;
         yValue = e.clientY - window.innerHeight / 2;
-
-        rorateDegree = (xValue / (window.innerWidth / 2)) * 20;
+        rotateDegree = (xValue / (window.innerWidth / 2)) * 20;
 
         update(e.clientX);
     });
 
+    let timeline = gsap.timeline();
 
-let timeline = gsap.timeline();
+    Array.from(parallax_el)
+        .filter((el) => !el.classList.contains("text"))
+        .forEach((el) => {
+            timeline.from(
+                el,
+                {
+                    top: `${el.offsetHeight / 2 + +el.dataset.distance}px`,
+                    duration: 3.5,
+                    ease: "power3.out",
+                },
+                "1"
+            );
+        });
 
-parallax_el.forEach(el => {
-   timeline.from(
-    el,
-        top: `${el.offsetHeight / 2 - 200}px`,
-        duration: 1,
-    },
-    "1"
-);
-})
+    timeline.from(".text h1", {
+        y: window.innerHeight - document.querySelector(".text h1").getBoundingClientRect().top + 200,
+        duration: 2,
+    }, "2.5")
+        .from(".text h2", {
+            y: -150,
+            opacity: 0,
+            duration: 1.5,
+        }, "3")
+
+        .from(".hide", {
+            opacity: 0,
+            duration: 1.5,
+
+        }, "3" );
 
 </script>
 

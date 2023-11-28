@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top hide">
     <a class="navbar-brand" href="/home">K's</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -56,14 +56,17 @@
     </style>
 
 @endif
-<div class="nav-kedua">
-    <nav class="nav nav-underline justify-content-around">
-        @foreach($categories as $category)
+<div class="nav-kedua ">
+    <header >
+
+        <nav class="nav nav-underline justify-content-around">
+            @foreach($categories as $category)
             <a class="nav-item nav-link {{ request('category') === $category->slug ? 'link-body-emphasis active' : 'link-body-emphasis' }}" href="/posts?category={{ $category->slug }}">
                 {{ $category->name }}
             </a>
-        @endforeach
-    </nav>
+            @endforeach
+        </nav>
+    </header>
 </div>
 
 
@@ -172,7 +175,7 @@
     }
 </style>
 
-@if(request()->is( 'home' ))
+@if(request()->is( 'home', '#' ))
     <style>
         nav {
             background-color: transparent;
@@ -181,7 +184,7 @@
             width: 100%;
             top: 0;
             left: 0;
-
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         .navbar-brand,
     .navbar-nav .nav-link {
@@ -195,5 +198,7 @@
         color: WHITE;
     }
     </style>
+    <script>
 
+    </script>
 @endif
