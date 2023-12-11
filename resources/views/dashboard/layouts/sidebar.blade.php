@@ -18,6 +18,12 @@
                         My Posts
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center gap-2 {{Request::is('dashboard/posts')? 'active' : ''}}" href="/dashboard/posts " style="color: black; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'">
+                        <i class="bi bi-file-earmark"></i>
+                        Pages
+                    </a>
+                </li>
             </ul>
             <hr class="my-3">
             <ul class="nav flex-column mb-auto">

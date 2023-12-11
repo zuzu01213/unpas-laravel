@@ -99,9 +99,6 @@
         {{ $posts->links() }}
     </div>
 
-
-
-
         <style>
             body {
                 background-color: white;
@@ -241,9 +238,7 @@
                 color: white;
                 border-color: black;
             }
-            .pagination li a:active{
 
-            }
         </style>
 
 

@@ -8,7 +8,7 @@
             <h1>{{ $post->title }}</h1>
             <p class="text-secondary">By: <a href="/posts?author={{$post->author->username}}" class="author">{{$post->author->name}}</a> in <a href="/posts?category={{ $post->category->slug }}">{{ $post->category->name }}</a></p>
 
-            <!-- Progress Bar -->
+
             <progress id="scroll-progress" value="0" max="100"></progress>
 
             @if ($post->image)

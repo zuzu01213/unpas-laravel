@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('container')
-<body>
+{{-- <body>
     <main>
 
         <div class="container mt-4">
@@ -93,4 +93,4 @@
         </style>
     @endif
 
-@endsection
+@endsection --}}

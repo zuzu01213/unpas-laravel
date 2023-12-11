@@ -44,20 +44,14 @@
     <div class="container__child signup__form">
         <form action="/login" method="post">
             @csrf
-            <div class="form-group @error('username') mb-0 @enderror">
-                <label for="username">Username</label>
-                <input class="form-control @error('username') is-invalid @enderror" type="text" name="username" id="username" placeholder="james.bond" value="{{ old('username') }}" required />
-                @error('username')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
             <div class="form-group @error('email') mb-0 @enderror">
                 <label for="email">Email</label>
-                <input class="form-control @error('email') is-invalid @enderror" type="email" name="email" id="email" placeholder="james.bond@.com" value="{{ old('email') }}" required />
+                <input class="form-control @error('email') is-invalid @enderror" type="text" name="email" id="email" placeholder="james.bond" value="{{ old('email') }}" required />
                 @error('email')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
+
             <div class="form-group @error('password') mb-0 @enderror">
                 <label for="password">Password</label>
                 <input class="form-control @error('password') is-invalid @enderror" type="password" name="password" id="password" placeholder="********" required />
@@ -65,13 +59,7 @@
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
-            <div class="form-group @error('passwordRepeat') mb-0 @enderror">
-                <label for="passwordRepeat">Repeat Password</label>
-                <input class="form-control @error('passwordRepeat') is-invalid @enderror" type="password" name="passwordRepeat" id="passwordRepeat" placeholder="********" required />
-                @error('passwordRepeat')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
+
             <small class="d-block text-center mt-3" >Haven't Registered? <a href="/register" class="register-link">Sign Up</a></small>
             <input class="btn btn--form" type="submit" value="Login" />
         </form>
@@ -274,5 +262,7 @@
     width: 50%;
     z-index: 9999;
   }
-
+  .form-group{
+    margin-top: 80px;
+  }
 </style>

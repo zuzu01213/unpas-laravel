@@ -25,24 +25,12 @@
     <div class="container__child signup__form">
         <form action="/register" method="post">
             @csrf
-            <div class="form-group @error('name') mb-0 @enderror">
-                <label for="name">Name</label>
-                <input class="form-control @error('name') is-invalid @enderror" type="text" name="name" id="name" placeholder="james.bond" value="{{ old('name') }}" required />
-                @error('name')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
+
             <div class="form-group">
-                <label for="username">Username</label>
-                <input class="form-control" type="text" name="username" id="username" placeholder="james.bond@.com" value="{{ old('username') }}" required />
-            </div>
-            <div class="form-group @error('email') mb-0 @enderror">
                 <label for="email">Email</label>
-                <input class="form-control @error('email') is-invalid @enderror" type="email" name="email" id="email" placeholder="********" required />
-                @error('email')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
+                <input class="form-control" type="text" name="email" id="email" placeholder="james.bond@.com" value="{{ old('email') }}" required />
             </div>
+
             <div class="form-group">
                 <label for="password">Password</label>
                 <input class="form-control" type="password" name="password" id="password" placeholder="********" value="{{ old('password') }}" required />
@@ -245,5 +233,7 @@ body {
     margin-top: 0.25rem;
     margin-bottom: 0;
   }
-
+  .form-group{
+    margin-top: 80px;
+  }
 </style>
