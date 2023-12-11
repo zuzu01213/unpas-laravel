@@ -4,27 +4,48 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\Category;
-use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class DashboardPostController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $postsPerPage = $request->input('postsPerPage', 10);
 
-        return view('dashboard.posts.index', [
-            'posts' => Post::where('user_id', auth()->user()->id)->get(),
-            'categories' => Category::all(),
+        $userPosts = Post::latest()
+            ->where('user_id', Auth::user()->id)
+            ->filter($request->only(['search', 'category', 'author'])) // Menggunakan filter yang telah Anda tentukan
+            ->paginate($postsPerPage)
+            ->withQueryString();
 
-        ]);
+        $categories = Category::all();
 
+        return view('dashboard.posts.index', compact('userPosts', 'categories'));
     }
 
+
+    public function createPost()
+{
+    $user = Auth::user();
+
+    if ($user && ($user->isPremium() || $user->isAdmin())) {
+        return view('dashboard.posts.create', [
+            'categories' => Category::all(),
+        ]);
+    } else {
+        return view('dashboard.posts.createLimited', [
+            'categories' => Category::all(),
+        ]);
+    }
+
+}
     /**
      * Show the form for creating a new resource.
      */

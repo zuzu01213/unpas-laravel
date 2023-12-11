@@ -5,7 +5,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-            <li class="nav-item {{ request()->is('home') ? 'active' : '' }}">
+            <li class="nav-item {{ request()->is('home', '/') ? 'active' : '' }}">
                 <a class="nav-link" href="/home">Home</a>
             </li>
             <li class="nav-item {{ request()->is('about') ? 'active' : '' }}">
@@ -16,6 +16,9 @@
             </li>
             <li class="nav-item {{ request()->is('categories') ? 'active' : '' }}">
                 <a class="nav-link" href="/categories/">Categories</a>
+            </li>
+            <li class="nav-item {{ request()->is('pricing') ? 'active' : '' }}">
+                <a class="nav-link" href="/pricing/">Pricing</a>
             </li>
             <li class="nav-item {{ request()->is('my-project') ? 'active' : '' }}">
                 <a class="nav-link" href="http://coba-laravel-2.test/3?jumlahProduk=10&generateButton=#" target="_blank">My Project</a>
@@ -48,7 +51,7 @@
             </ul>
     </div>
 </nav>
-@if(request()->is('home', 'about', 'login', 'register', 'categories'))
+@if(request()->is('home', 'about', 'login', 'register', 'categories','/', 'pricing', 'payment'))
     <style>
         .nav-kedua {
             display: none;
@@ -175,7 +178,7 @@
     }
 </style>
 
-@if(request()->is( 'home', '#' ))
+@if(request()->is( 'home', '/' ))
     <style>
         nav {
             background-color: transparent;
@@ -194,11 +197,17 @@
         z-index: 123142142142132112321;
 
     }
-    .navbar-nav .nav-link.dropdown-toggle {
-        color: WHITE;
-    }
+
     </style>
     <script>
 
     </script>
+@endif
+@if(request()->is( 'pricing', ))
+    <style>
+    .dropdown-menu a {
+      padding-bottom: 15px;
+    }
+    </style>
+
 @endif

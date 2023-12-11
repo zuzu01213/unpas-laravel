@@ -28,9 +28,6 @@
                 <td>{{ $category->name }}</td>
 
                 <td class="between">
-                    <a href="/dashboard/categories/{{ $category->slug }}" class="action-link">
-                        <i class="bi bi-eye"></i> View
-                    </a>
                     <a href="/dashboard/categories/{{ $category->slug }}/edit" class="action-link" style="background-color: #2C3E50;">
                         <i class="bi bi-pencil-square"></i> Edit
                     </a>

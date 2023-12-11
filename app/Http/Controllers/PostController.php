@@ -6,9 +6,12 @@ use App\Models\Category;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Post;
-
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\PostLimitController;
 class PostController extends Controller
 {
+
+
     public function index() {
         $title = '';
         $categories = Category::paginate(7);
@@ -38,7 +41,9 @@ class PostController extends Controller
             'active' => 'posts',
             "post" => $post
         ]);
+
     }
+
 }
 
 class CategoryController extends Controller

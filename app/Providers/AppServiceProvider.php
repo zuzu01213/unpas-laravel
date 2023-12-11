@@ -5,7 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\View;
-use App\Models\Category;
+use App\Models\category;
 use App\Models\User;
 use Illuminate\Support\Facades\Gate;
 
